@@ -1,0 +1,135 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+}
+
+a,a:link,a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #f96743, #f3c19b);
+    transition: background 0.5s;
+}
+
+
+.title{
+    font-family: 'Times New Roman', Times, serif;
+    color: hsl(0, 0%, 100%);
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    overflow-y: auto;
+}
+
+.bio{
+    color: cornsilk;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.lines{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    pointer-events: none; /* 使線條不影響點擊事件 */
+    z-index: 0;
+}
+
+.line1{
+    position: absolute;
+    width: 210%;
+    height: 2px;
+    background: rgba(23, 231, 220, 0.867);
+    animation: moveLine 10s linear infinite;
+    transform-origin: left;
+    transform: rotate(-45deg); /* 旋轉 45 度，形成對角線 */
+}
+
+.line2{
+    position: absolute;
+    width: 200%;
+    height: 2px;
+    background: rgba(23, 231, 220, 0.867);
+    animation: moveLine 10s linear infinite;
+    transform: rotate(45deg); /* 旋轉 45 度，形成對角線 */
+}
+
+.line3{
+    position: absolute;
+    width: 200%;
+    height: 2px;
+    background: rgba(23, 231, 220, 0.867);
+    animation: moveLine 10s linear infinite;
+    transform: rotate(-45deg); /* 旋轉 45 度，形成對角線 */
+}
+
+.line4{
+    position: absolute;
+    width: 210%;
+    height: 2px;
+    background: rgba(23, 231, 220, 0.867);
+    animation: moveLine 10s linear infinite;
+    transform-origin: left;
+    transform: rotate(45deg); /* 旋轉 45 度，形成對角線 */
+}
+
+.left-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: start;
+    margin-left: 20px;
+}
+
+.right-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: end;
+    margin-right: 20px;
+}
+
+.nav-container{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#c{
+    margin-left: 20px;
+}
+
+#d{
+    margin-right: 20px;
+}
+
+@keyframes zoom-in{
+    from{font-size: 25px;}
+    to{font-size: 30px;}
+}
+
+.nav-container-animation:hover{
+    animation-name: zoom-in;
+    animation-duration: 0.5s;
+}
