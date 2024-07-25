@@ -20,13 +20,13 @@ body {
 
 .title{
     font-family: 'Times New Roman', Times, serif;
-    color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
     font-size: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90%;
+    height: 100%;
     overflow-y: auto;
 }
 
@@ -51,7 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    pointer-events: none; /* 使線條不影響點擊事件 */
+    pointer-events: none; 
     z-index: 0;
 }
 
@@ -62,7 +62,7 @@ body {
     background: rgba(23, 231, 220, 0.867);
     animation: moveLine 10s linear infinite;
     transform-origin: left;
-    transform: rotate(-45deg); /* 旋轉 45 度，形成對角線 */
+    transform: rotate(-45deg); 
 }
 
 .line2{
@@ -71,7 +71,7 @@ body {
     height: 2px;
     background: rgba(23, 231, 220, 0.867);
     animation: moveLine 10s linear infinite;
-    transform: rotate(45deg); /* 旋轉 45 度，形成對角線 */
+    transform: rotate(45deg); 
 }
 
 .line3{
@@ -80,7 +80,7 @@ body {
     height: 2px;
     background: rgba(23, 231, 220, 0.867);
     animation: moveLine 10s linear infinite;
-    transform: rotate(-45deg); /* 旋轉 45 度，形成對角線 */
+    transform: rotate(-45deg); 
 }
 
 .line4{
@@ -90,46 +90,138 @@ body {
     background: rgba(23, 231, 220, 0.867);
     animation: moveLine 10s linear infinite;
     transform-origin: left;
-    transform: rotate(45deg); /* 旋轉 45 度，形成對角線 */
+    transform: rotate(45deg); 
 }
 
-.left-list{
+.education{
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: start;
-    margin-left: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: scroll;
 }
 
-.right-list{
+#subtitle{
+    margin-bottom: 5px;
+    font-size: 50px;
     display: flex;
-    flex-direction: row;
-    justify-content: right;
-    align-items: end;
-    margin-right: 20px;
-}
-
-.nav-container{
-    font-size: 25px;
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-#c{
-    margin-left: 20px;
+.project{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
 }
 
-#d{
-    margin-right: 20px;
+.button{
+    margin-top: 10px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+#but1:hover{
+    background-color: #ffffff;
+}
+
+#but2:hover{
+    background-color: #ffffff;
+}
+
+#but3:hover{
+    background-color: #ffffff;
+}
+
+#but4:hover{
+    background-color: #ffffff;
+}
+
+#but5:hover{
+    background-color: #ffffff;
+}
+
+#but1{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: #ffffff;
+    background-color: #f96743;
+    transition-duration: 0.4s;
+    border-radius: 50px;
+    margin-left: 25px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#but2{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: #ffffff;
+    background-color: #f96743;
+    transition-duration: 0.4s;
+    margin-left: 15px;
+    font-size: 20px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+#but3{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: #ffffff;
+    background-color: #f96743;
+    transition-duration: 0.4s;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    margin-left: 5px;
+}
+
+#but4{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: #ffffff;
+    background-color: #f96743;
+    transition-duration: 0.4s;
+    margin-left: 13px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+}
+
+#but5{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: #ffffff;
+    background-color: #f96743;
+    transition-duration: 0.4s;
+    margin-left: 12px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 @keyframes zoom-in{
-    from{font-size: 25px;}
-    to{font-size: 30px;}
+    from{font-size: 3em;}
+    to{font-size: 4em;}
 }
 
-.nav-container-animation:hover{
+.icon{
+    font-size: 3em;
+}
+
+.icon:hover{
     animation-name: zoom-in;
-    animation-duration: 0.5s;
+    animation-duration: 0.6s;
 }
