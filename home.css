@@ -225,3 +225,8 @@ body {
     animation-name: zoom-in;
     animation-duration: 0.6s;
 }
+
+#name{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
