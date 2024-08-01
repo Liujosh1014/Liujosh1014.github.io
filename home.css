@@ -230,3 +230,16 @@ body {
     font-size: 50px;
     margin-bottom: 20px;
 }
+
+ul{
+    list-style-type: none;
+}
+
+ul li::before{
+    font-size: 25px;
+    content: "★";
+    color: rgb(49, 10, 245);
+    float: inline-start;
+    margin-right: 10px;
+    margin-top: 5px;
+}
