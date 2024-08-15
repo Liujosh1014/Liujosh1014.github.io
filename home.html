@@ -8,12 +8,19 @@
         <script src="scroll.js" defer></script>
     </head>
     <body>
-        <div class="button">
-            <button id="but1" onclick="scrollToSection('top')">Top</button>
-            <button id="but3" onclick="scrollToSection('education')">Education</button>
-            <button id="but4" onclick="scrollToSection('project')">Project</button>
-            <button id="but5" onclick="scrollToSection('contact')">Contact</button>
-        </div>
+        <nav>
+            <div class="dropDownButton">
+                <a class="fa-solid fa-bars"></a>
+            </div>
+            <div class="dropDownContent">
+                <ul>
+                    <li><button onclick="scrollToSection('top')">Top</button></li>
+                    <li><button onclick="scrollToSection('education')">Education</button></li>
+                    <li><button onclick="scrollToSection('project')">Project</button></li>
+                    <li><button onclick="scrollToSection('contact')">Contact</button></li>
+                </ul>
+            </div>
+        </nav>
         <div class="bio" id="top">
             <p id="name"><i>Hi ! I'm Chang Yan, Liu</i></p>
             <p>I'm a student, majoring in <b><i>computer science and engineering</i></b>.</p>
@@ -28,7 +35,7 @@
             <div class="line4"></div>
         </div>
         <div class="education" id="education">
-            <ul>
+            <ul id="exp">
                 <p id="subtitle"><b><i>Education</i></b></p>
                 <li><h1>學士(B.S.) 2023.9~NOW</h1></li>
                 <h2>國立臺灣海洋大學 資訊工程學系</h2>
