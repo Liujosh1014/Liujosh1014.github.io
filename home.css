@@ -231,7 +231,7 @@ ul{
     list-style-type: none;
 }
 
-ul li::before{
+ul#exp li::before{
     font-size: 25px;
     content: "★";
     color: rgb(49, 10, 245);
@@ -300,4 +300,93 @@ footer .wave#contact-box{
     opacity: 1;
     bottom: 15;
     animation: wave2 2s steps(10000) infinite;
+}
+
+/* 确保 nav 设置了 position: relative */
+nav {
+    position: relative; 
+}
+
+/* 下拉按钮的样式 */
+.dropDownButton {
+    z-index: 2;
+    position: absolute;
+    border: none;
+}
+
+/* 下拉按钮中的链接样式 */
+.dropDownButton a {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 30px;
+    color: #d4cfcb;
+    cursor: pointer;
+}
+
+/* 下拉按钮中的链接悬停效果 */
+.dropDownButton a:hover {
+    transition: transform .6s;
+    transform: rotate(180deg);
+}
+
+/* 下拉内容的样式 */
+.dropDownContent {
+    position: absolute;
+    z-index: 1;
+    top: 100%; /* 定位在下拉按钮下方 */
+    left: 0; /* 对齐左边 */
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-left: 0px;
+    padding-bottom: 30px;
+    background-color: rgba(0,0,0,.1);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    transition: transform .6s, opacity .6s; /* 添加过渡效果 */
+    transform: translateY(-100%); /* 初始隐藏状态 */
+    opacity: 0; /* 初始不可见 */
+}
+
+@keyframes moveRight{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(20px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.dropDownContent button{
+    font-size: 50px;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.dropDownContent button:hover{
+    animation-name: moveRight;
+    animation-duration: 0.8s;
+}
+
+/* 鼠标悬停时显示下拉内容 */
+.dropDownButton:hover + .dropDownContent {
+    transform: translateY(0); /* 滑入可见区域 */
+    opacity: 1; /* 使下拉内容可见 */
+}
+
+.dropDownContent:hover {
+    transform: translateY(0); /* 保持显示 */
+    opacity: 1; /* 保持可见 */
 }
