@@ -1,306 +1,951 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-y: auto;
-    font-family: Arial, sans-serif;
-}
 
-a,a:link,a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-body {
-    margin: 0;
-    background: linear-gradient(to bottom, #2e2e2e, #d4cfcb);
-    transition: background 0.5s;
-}
-
-
-.title{
-    font-family: 'Times New Roman', Times, serif;
-    color: hsl(0, 0%, 0%);
-    font-size: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    overflow-y: auto;
-}
-
-.bio{
-    color: cornsilk;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    height: 98%;
-    overflow-y: auto;
-}
-
-.topBut{
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    margin-right: 30px;
-    position: relative;
-    z-index: 2000;
-}
-
-.but{
-    position: fixed;
-}
-
-@keyframes jump{
-    0%{
-        transform: translateY(0);
+@media(max-width: 576px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-y: auto;
+        font-family: Arial, sans-serif;
     }
-    50%{
-        transform: translateY(-50%);
+    
+    a,a:link,a:visited {
+        text-decoration: none;
+        color: black;
     }
-    100%{
-        transform: translateY(0);
+    
+    body {
+        margin: 0;
+        background: linear-gradient(to bottom, #2e2e2e, #d4cfcb);
+        transition: background 0.5s;
+    }
+    
+    .bio{
+        color: cornsilk;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 11px;
+        height: 98%;
+        overflow-y: auto;
+    }
+    
+    .topBut{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        margin-right: 15px;
+        position: relative;
+        z-index: 2000;
+    }
+    
+    .but{
+        position: fixed;
+    }
+    
+    @keyframes jump{
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-50%);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    
+    .but button{
+        cursor: pointer;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width: 45px;
+        height: 45px;
+        font-size: 15px;
+        border: greenyellow;
+        background-color: rgb(172, 163, 239);
+        border-radius: 100px;
+        opacity: 0.7;
+        box-shadow: 3px 5px 10px rgba(0,0,0,.2);
+    }
+    
+    .but button:hover{
+        animation-name: jump;
+        animation-duration: 1.2s;
+    }
+    
+    .education{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    
+    #subtitle{
+        margin-bottom: 5px;
+        font-size: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .education li{
+        font-size: 25px;
+    }
+
+    .education p#chn{
+        font-size: 20px;
+    }
+
+    .education p#eng{
+        font-size: 14px;
+    }
+    
+    .project{
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .project p{
+        display: flex;
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    @keyframes zoom-in{
+        0%{font-size: 1.5em;}
+        50%{font-size: 2em;}
+        100%{font-size: 1.5em;}
+    }
+    
+    .icon{
+        font-size: 1.5em;
+    }
+    
+    .icon:hover{
+        animation-name: zoom-in;
+        animation-duration: 0.5s;
+    }
+    
+    #name{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+    ul{
+        list-style-type: none;
+    }
+    
+    ul#exp li::before{
+        font-size: 25px;
+        content: "★";
+        color: rgb(49, 10, 245);
+        float: inline-start;
+        margin-right: 10px;
+    }
+    
+    @keyframes wave1{
+        0%{
+            background-position-x: 1000px;
+        }
+        100%{
+            background-position-x: 0px;
+        }
+    }
+    
+    @keyframes wave2{
+        0%{
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    
+    footer{
+        position: relative;
+        padding: 20px 50px;
+    }
+    
+    footer .wave{
+        position: absolute;
+        font-size: 30px;
+        text-align: center;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: url("wave.png");
+        background-size: 1000px 200px;
+    }
+
+    footer .wave#contact-box p#copyright{
+        font-size: 15px;
+    }
+    
+    footer .wave#wave1{
+        z-index: 1000;
+        opacity: 0.7;
+        bottom: 0;
+        animation: wave1 4s steps(10000) infinite;
+    }
+    
+    footer .wave#wave2{
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: wave2 4s steps(10000) infinite;
+    }
+    footer .wave#wave3{
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15;
+        animation: wave1 3s steps(10000) infinite;
+    }
+    
+    footer .wave#contact-box{
+        z-index: 1003;
+        opacity: 1;
+        bottom: 15;
+        animation: wave2 2s steps(10000) infinite;
+    }
+    
+    /* 确保 nav 设置了 position: relative */
+    nav {
+        position: relative; 
+    }
+    
+    /* 下拉按钮的样式 */
+    .dropDownButton {
+        z-index: 2;
+        position: absolute;
+        border: none;
+    }
+    
+    /* 下拉按钮中的链接样式 */
+    .dropDownButton a {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 30px;
+        color: #d4cfcb;
+        cursor: pointer;
+    }
+    
+    /* 下拉按钮中的链接悬停效果 */
+    .dropDownButton a:hover {
+        transition: transform .6s;
+        transform: rotate(180deg);
+    }
+    
+    /* 下拉内容的样式 */
+    .dropDownContent {
+        position: absolute;
+        z-index: 1;
+        top: 100%; /* 定位在下拉按钮下方 */
+        left: 0%; /* 对齐左边 */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        padding-left: 0px;
+        padding-bottom: 30px;
+        background-color: rgba(0,0,0,.1);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+        transition: transform .6s, opacity .6s; /* 添加过渡效果 */
+        transform: translateX(-100%); /* 初始隐藏状态 */
+        opacity: 0; /* 初始不可见 */
+    }
+    
+    @keyframes moveRight{
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(20px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    
+    .dropDownContent button{
+        font-size: 15px;
+        cursor: pointer;
+        border: none;
+        color: #ffffff;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+    
+    .dropDownContent button:hover{
+        animation-name: moveRight;
+        animation-duration: 0.8s;
+    }
+    
+    /* 鼠标悬停时显示下拉内容 */
+    .dropDownButton:hover + .dropDownContent {
+        transform: translateX(0); /* 滑入可见区域 */
+        opacity: 1; /* 使下拉内容可见 */
+    }
+    
+    .dropDownContent:hover {
+        transform: translateX(0); /* 保持显示 */
+        opacity: 1; /* 保持可见 */
     }
 }
 
-.but button{
-    cursor: pointer;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 65px;
-    height: 65px;
-    font-size: 30px;
-    border: greenyellow;
-    background-color: rgb(172, 163, 239);
-    border-radius: 100px;
-    opacity: 0.7;
-    box-shadow: 3px 5px 10px rgba(0,0,0,.2);
-}
-
-.but button:hover{
-    animation-name: jump;
-    animation-duration: 1.2s;
-}
-
-.education{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    overflow-y: scroll;
-}
-
-#subtitle{
-    margin-bottom: 5px;
-    font-size: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.project{
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    overflow-y: auto;
-}
-
-.contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-@keyframes zoom-in{
-    0%{font-size: 1.5em;}
-    50%{font-size: 2em;}
-    100%{font-size: 1.5em;}
-}
-
-.icon{
-    font-size: 1.5em;
-}
-
-.icon:hover{
-    animation-name: zoom-in;
-    animation-duration: 0.5s;
-}
-
-#name{
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-ul{
-    list-style-type: none;
-}
-
-ul#exp li::before{
-    font-size: 25px;
-    content: "★";
-    color: rgb(49, 10, 245);
-    float: inline-start;
-    margin-right: 10px;
-    margin-top: 5px;
-}
-
-@keyframes wave1{
-    0%{
-        background-position-x: 1000px;
+@media(min-width: 577px) and (max-width: 991px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-y: auto;
+        font-family: Arial, sans-serif;
     }
-    100%{
-        background-position-x: 0px;
+    
+    a,a:link,a:visited {
+        text-decoration: none;
+        color: black;
+    }
+    
+    body {
+        margin: 0;
+        background: linear-gradient(to bottom, #2e2e2e, #d4cfcb);
+        transition: background 0.5s;
+    }
+    
+    .bio{
+        color: cornsilk;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        height: 98%;
+        overflow-y: auto;
+    }
+
+    .bio p{
+        font-size: 17px;
+    }
+    
+    .topBut{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        margin-right: 30px;
+        position: relative;
+        z-index: 2000;
+    }
+    
+    .but{
+        position: fixed;
+    }
+    
+    @keyframes jump{
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-50%);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    
+    .but button{
+        cursor: pointer;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+        border: greenyellow;
+        background-color: rgb(172, 163, 239);
+        border-radius: 100px;
+        opacity: 0.7;
+        box-shadow: 3px 5px 10px rgba(0,0,0,.2);
+    }
+    
+    .but button:hover{
+        animation-name: jump;
+        animation-duration: 1.2s;
+    }
+    
+    .education{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 112%;
+        overflow-y: scroll;
+    }
+
+    .education li p{
+        font-size: 30px;
+    }
+
+    .education p#chn{
+        font-size: 20px;
+    }
+
+    .education p#eng{
+        font-size: 20px;
+    }
+    
+    #subtitle{
+        margin-bottom: 5px;
+        font-size: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .project{
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .project p{
+        font-size: 18px;
+    }
+    
+    .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    @keyframes zoom-in{
+        0%{font-size: 1.5em;}
+        50%{font-size: 2em;}
+        100%{font-size: 1.5em;}
+    }
+    
+    .icon{
+        font-size: 1.5em;
+    }
+    
+    .icon:hover{
+        animation-name: zoom-in;
+        animation-duration: 0.5s;
+    }
+    
+    #name{
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    
+    ul{
+        list-style-type: none;
+    }
+    
+    ul#exp li::before{
+        font-size: 25px;
+        content: "★";
+        color: rgb(49, 10, 245);
+        float: inline-start;
+        margin-right: 10px;
+        margin-top: 3px;
+    }
+    
+    @keyframes wave1{
+        0%{
+            background-position-x: 1000px;
+        }
+        100%{
+            background-position-x: 0px;
+        }
+    }
+    
+    @keyframes wave2{
+        0%{
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    
+    footer{
+        position: relative;
+        padding: 20px 50px;
+    }
+    
+    footer .wave{
+        position: absolute;
+        font-size: 30px;
+        text-align: center;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: url("wave.png");
+        background-size: 1000px 200px;
+    }
+    
+    footer .wave#wave1{
+        z-index: 1000;
+        opacity: 0.7;
+        bottom: 0;
+        animation: wave1 4s steps(10000) infinite;
+    }
+    
+    footer .wave#wave2{
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: wave2 4s steps(10000) infinite;
+    }
+    footer .wave#wave3{
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15;
+        animation: wave1 3s steps(10000) infinite;
+    }
+    
+    footer .wave#contact-box{
+        z-index: 1003;
+        opacity: 1;
+        bottom: 15;
+        animation: wave2 2s steps(10000) infinite;
+    }
+
+    footer .wave#contact-box p#copyright{
+        font-size: 20px;
+    }
+    
+    /* 确保 nav 设置了 position: relative */
+    nav {
+        position: relative; 
+    }
+    
+    /* 下拉按钮的样式 */
+    .dropDownButton {
+        z-index: 2;
+        position: absolute;
+        border: none;
+    }
+    
+    /* 下拉按钮中的链接样式 */
+    .dropDownButton a {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 30px;
+        color: #d4cfcb;
+        cursor: pointer;
+    }
+    
+    /* 下拉按钮中的链接悬停效果 */
+    .dropDownButton a:hover {
+        transition: transform .6s;
+        transform: rotate(180deg);
+    }
+    
+    /* 下拉内容的样式 */
+    .dropDownContent {
+        position: absolute;
+        z-index: 1;
+        top: 100%; /* 定位在下拉按钮下方 */
+        left: 0%; /* 对齐左边 */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 25%;
+        padding-left: 0px;
+        padding-bottom: 30px;
+        background-color: rgba(0,0,0,.1);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+        transition: transform .6s, opacity .6s; /* 添加过渡效果 */
+        transform: translateX(-100%); /* 初始隐藏状态 */
+        opacity: 0; /* 初始不可见 */
+    }
+    
+    @keyframes moveRight{
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(20px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    
+    .dropDownContent button{
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        color: #ffffff;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+    
+    .dropDownContent button:hover{
+        animation-name: moveRight;
+        animation-duration: 0.8s;
+    }
+    
+    /* 鼠标悬停时显示下拉内容 */
+    .dropDownButton:hover + .dropDownContent {
+        transform: translateX(0); /* 滑入可见区域 */
+        opacity: 1; /* 使下拉内容可见 */
+    }
+    
+    .dropDownContent:hover {
+        transform: translateX(0); /* 保持显示 */
+        opacity: 1; /* 保持可见 */
     }
 }
 
-@keyframes wave2{
-    0%{
-        background-position-x: 0px;
+@media(min-width: 992px){
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-y: auto;
+        font-family: Arial, sans-serif;
     }
-    100%{
-        background-position-x: 1000px;
+    
+    a,a:link,a:visited {
+        text-decoration: none;
+        color: black;
+    }
+    
+    body {
+        margin: 0;
+        background: linear-gradient(to bottom, #2e2e2e, #d4cfcb);
+        transition: background 0.5s;
+    }
+    
+    .bio{
+        color: cornsilk;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    .topBut{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        margin-right: 30px;
+        position: relative;
+        z-index: 2000;
+    }
+    
+    .but{
+        position: fixed;
+    }
+    
+    @keyframes jump{
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-50%);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    
+    .but button{
+        cursor: pointer;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+        border: greenyellow;
+        background-color: rgb(172, 163, 239);
+        border-radius: 100px;
+        opacity: 0.7;
+        box-shadow: 3px 5px 10px rgba(0,0,0,.2);
+    }
+    
+    .but button:hover{
+        animation-name: jump;
+        animation-duration: 1.2s;
+    }
+    
+    .education{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 112%;
+        overflow-y: auto;
+    }
+
+    .education li p{
+        font-size: 35px;
+    }
+
+    .education p#chn{
+        font-size: 25px;
+    }
+
+    .education p#eng{
+        font-size: 25px;
+    }
+    
+    #subtitle{
+        margin-bottom: 5px;
+        font-size: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .project{
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .project p{
+        font-size: 25px;
+    }
+    
+    .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    @keyframes zoom-in{
+        0%{font-size: 1.5em;}
+        50%{font-size: 2em;}
+        100%{font-size: 1.5em;}
+    }
+    
+    .icon{
+        font-size: 1.5em;
+    }
+    
+    .icon:hover{
+        animation-name: zoom-in;
+        animation-duration: 0.5s;
+    }
+    
+    #name{
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    
+    ul{
+        list-style-type: none;
+    }
+    
+    ul#exp li::before{
+        font-size: 25px;
+        content: "★";
+        color: rgb(49, 10, 245);
+        float: inline-start;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+    
+    @keyframes wave1{
+        0%{
+            background-position-x: 1000px;
+        }
+        100%{
+            background-position-x: 0px;
+        }
+    }
+    
+    @keyframes wave2{
+        0%{
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    
+    footer{
+        position: relative;
+        padding: 20px 50px;
+    }
+    
+    footer .wave{
+        position: absolute;
+        font-size: 30px;
+        text-align: center;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 210px;
+        background: url("wave.png");
+        background-size: 1000px 210px;
+    }
+    
+    footer .wave#wave1{
+        z-index: 1000;
+        opacity: 0.7;
+        bottom: 0;
+        animation: wave1 4s steps(10000) infinite;
+    }
+    
+    footer .wave#wave2{
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: wave2 4s steps(10000) infinite;
+    }
+    footer .wave#wave3{
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15;
+        animation: wave1 3s steps(10000) infinite;
+    }
+    
+    footer .wave#contact-box{
+        z-index: 1003;
+        opacity: 1;
+        bottom: 15;
+        animation: wave2 2s steps(10000) infinite;
+    }
+    
+    /* 确保 nav 设置了 position: relative */
+    nav {
+        position: relative; 
+    }
+    
+    /* 下拉按钮的样式 */
+    .dropDownButton {
+        z-index: 2;
+        position: absolute;
+        border: none;
+    }
+    
+    /* 下拉按钮中的链接样式 */
+    .dropDownButton a {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 30px;
+        color: #d4cfcb;
+        cursor: pointer;
+    }
+    
+    /* 下拉按钮中的链接悬停效果 */
+    .dropDownButton a:hover {
+        transition: transform .6s;
+        transform: rotate(180deg);
+    }
+    
+    /* 下拉内容的样式 */
+    .dropDownContent {
+        position: absolute;
+        z-index: 1;
+        top: 100%; /* 定位在下拉按钮下方 */
+        left: 0%; /* 对齐左边 */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 20%;
+        padding-left: 0px;
+        padding-bottom: 30px;
+        background-color: rgba(0,0,0,.1);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+        transition: transform .6s, opacity .6s; /* 添加过渡效果 */
+        transform: translateX(-100%); /* 初始隐藏状态 */
+        opacity: 0; /* 初始不可见 */
+    }
+    
+    @keyframes moveRight{
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(20px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    
+    .dropDownContent button{
+        font-size: 50px;
+        cursor: pointer;
+        border: none;
+        color: #ffffff;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+    
+    .dropDownContent button:hover{
+        animation-name: moveRight;
+        animation-duration: 0.8s;
+    }
+    
+    /* 鼠标悬停时显示下拉内容 */
+    .dropDownButton:hover + .dropDownContent {
+        transform: translateX(0); /* 滑入可见区域 */
+        opacity: 1; /* 使下拉内容可见 */
+    }
+    
+    .dropDownContent:hover {
+        transform: translateX(0); /* 保持显示 */
+        opacity: 1; /* 保持可见 */
     }
 }
 
-footer{
-    position: relative;
-    padding: 20px 50px;
-}
-
-footer .wave{
-    position: absolute;
-    font-size: 30px;
-    text-align: center;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: url("wave.png");
-    background-size: 1000px 200px;
-}
-
-footer .wave#wave1{
-    z-index: 1000;
-    opacity: 0.7;
-    bottom: 0;
-    animation: wave1 4s steps(10000) infinite;
-}
-
-footer .wave#wave2{
-    z-index: 999;
-    opacity: 0.5;
-    bottom: 10px;
-    animation: wave2 4s steps(10000) infinite;
-}
-footer .wave#wave3{
-    z-index: 1000;
-    opacity: 0.2;
-    bottom: 15;
-    animation: wave1 3s steps(10000) infinite;
-}
-
-footer .wave#contact-box{
-    z-index: 1003;
-    opacity: 1;
-    bottom: 15;
-    animation: wave2 2s steps(10000) infinite;
-}
-
-/* 确保 nav 设置了 position: relative */
-nav {
-    position: relative; 
-}
-
-/* 下拉按钮的样式 */
-.dropDownButton {
-    z-index: 2;
-    position: absolute;
-    border: none;
-}
-
-/* 下拉按钮中的链接样式 */
-.dropDownButton a {
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 30px;
-    color: #d4cfcb;
-    cursor: pointer;
-}
-
-/* 下拉按钮中的链接悬停效果 */
-.dropDownButton a:hover {
-    transition: transform .6s;
-    transform: rotate(180deg);
-}
-
-/* 下拉内容的样式 */
-.dropDownContent {
-    position: absolute;
-    z-index: 1;
-    top: 100%; /* 定位在下拉按钮下方 */
-    left: 0%; /* 对齐左边 */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 20%;
-    padding-left: 0px;
-    padding-bottom: 30px;
-    background-color: rgba(0,0,0,.1);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(255, 255, 255, .2);
-    transition: transform .6s, opacity .6s; /* 添加过渡效果 */
-    transform: translateX(-100%); /* 初始隐藏状态 */
-    opacity: 0; /* 初始不可见 */
-}
-
-@keyframes moveRight{
-    0%{
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(20px);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-
-.dropDownContent button{
-    font-size: 50px;
-    cursor: pointer;
-    border: none;
-    color: #ffffff;
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-}
-
-.dropDownContent button:hover{
-    animation-name: moveRight;
-    animation-duration: 0.8s;
-}
-
-/* 鼠标悬停时显示下拉内容 */
-.dropDownButton:hover + .dropDownContent {
-    transform: translateX(0); /* 滑入可见区域 */
-    opacity: 1; /* 使下拉内容可见 */
-}
-
-.dropDownContent:hover {
-    transform: translateX(0); /* 保持显示 */
-    opacity: 1; /* 保持可见 */
-}
